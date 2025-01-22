@@ -83,7 +83,11 @@ function changeAmount(operator, title){
         if(operator == '+'){
             amount.innerHTML = Number(amount.innerHTML) + 1;
         }else{
-            amount.innerHTML = Number(amount.innerHTML) - 1;
+            if(amount.innerHTML != '1'){
+                amount.innerHTML = Number(amount.innerHTML) - 1;
+            }else{
+                deleteElementFromBaket(title);
+            }
         }
         
 }
