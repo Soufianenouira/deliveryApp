@@ -1,0 +1,102 @@
+header{
+    height: 10vh;
+    background-color: rgb(255,128,0);
+}
+
+main{
+    display: flex;
+
+}
+
+.shopping-basket-empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.text-align-right{
+    text-align: right;
+}
+
+.text-align-left{
+    text-align: left;
+}
+.shopping-basket{
+    padding: 10px;
+    border: 1px solid;
+    width: 220px;
+    text-align: center;
+}
+
+span{
+    display: flex;
+    flex-direction: column;
+}
+
+.costs{
+    display: none;
+    justify-content: space-between;
+    border-top: 2px solid;
+
+}
+
+.foods{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 80vh;
+    flex: 1;
+    margin: 10px;
+}
+
+.shopping-basket-img{
+    width: 100px;
+}
+
+.card{
+    flex-direction: row-reverse !important;
+}
+.card:hover{
+    background-color: rgb(254,229,203);
+}
+
+.btn-div{
+    height: 40px;
+    margin: 5px;
+}
+
+.shopping-basket-elements{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.amount-btn{
+    color: rgb(243, 150, 50);
+    border: 0;
+    background-color: transparent;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.delete-img{
+    width: 20px;
+    border: 0;
+    background-color: transparent;
+}
+
+b{
+    font-weight: lighter;
+}
+
+footer{
+    height: 10vh;
+    background-color: rgb(255,128,0);
+}
