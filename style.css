@@ -26,6 +26,94 @@ main {
     flex: 1;
 }
 
+.slide-bar-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    align-items: center;
+    
+}
+.slide-btn{
+    border: 0;
+    background-color: transparent;
+}
+section{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* SCROLL BAR */
+section::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+}
+
+section::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+}
+
+section::-webkit-scrollbar-thumb {
+    background: rgba(218, 201, 213, 0.445);
+}
+
+section::-webkit-scrollbar-thumb:hover {
+    background: rgba(26, 63, 33, 0.445);
+}
+
+.slide-bar-img{
+    width: 250px;
+    height: 250px;
+    cursor: pointer;
+    transform: scale(.95);
+    transition: all .3s;
+    margin-bottom: 1px;
+}
+
+.slide-bar-img-basket{
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transform: scale(.95);
+    transition: all .3s;
+    border-radius: 8px;
+    margin-bottom: 1px;
+}
+
+.slide-bar-img:hover{
+    transform: scale(1);
+}
+
+ #slide-left{
+    height: 40px;
+ }
+
+ #slide-right{
+    height: 40px;
+ }
+
+ /* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(63, 35, 26, 0.445);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-quaternary);
+}
+
 .btn-img-basket {
     width: 50px;
     border-radius: 12px;
@@ -55,14 +143,14 @@ main {
     background-color: white;
     position: sticky;
     top: 0;
-    overflow-y: scroll;
+    
 }
 
 .notification{
     display: none;
     position: absolute;
-    top: 30%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
     background-color: rgb(131, 125, 138);
     z-index: 99;
     border: 2px solid;
@@ -97,22 +185,6 @@ span {
 
 .foods-container {}
 
-/* SCROLL BAR */
-::-webkit-scrollbar {
-    width: 2px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.445);
-}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.445);
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.445);
-}
 
 .shopping-basket-img {
     width: 100px;
@@ -128,6 +200,7 @@ span {
 
 .card {
     flex-direction: row-reverse !important;
+    margin: 5px;
 }
 
 .card:hover {
@@ -149,6 +222,7 @@ span {
 #basket-elements{
     max-height: 304px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .text-align-center {
@@ -253,7 +327,7 @@ footer {
         min-width: 100%;
         display: none;
         justify-content: center;
-        z-index: 99;
+        z-index: 60;
         position: fixed;
         background-color: transparent;
         border: 0;

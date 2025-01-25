@@ -102,6 +102,38 @@ let clicked = 0;
 let basketElementsCounter = 0;
 let isDelevery = 1;
 let windowWidthOld = window.innerWidth;
+let slideBarImg = document.getElementsByClassName("slide-bar-img");
+let play = setInterval(autoPlay, 50);
+
+function slideLeft(){
+  let slider = globalThis.document.getElementById("slider");
+  let sliderBasket = globalThis.document.getElementById("slider-basket");
+  slider.scrollLeft -= 125;
+  sliderBasket.scrollLeft -= 125;
+}
+function slideRight(){
+  let slider = globalThis.document.getElementById("slider");
+  let sliderBasket = globalThis.document.getElementById("slider-basket");
+  slider.scrollLeft += 125;
+  sliderBasket.scrollLeft += 125;
+}
+
+function autoPlay(){
+  let slider = globalThis.document.getElementById("slider");
+  let sliderBasket = globalThis.document.getElementById("slider-basket");
+  const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+  const basketMaxScrollLeft = sliderBasket.scrollWidth - sliderBasket.clientWidth;
+  if(slider.scrollLeft > (maxScrollLeft-2)){
+    slider.scrollLeft -= maxScrollLeft;
+  }else{
+    slider.scrollLeft += 1;
+  }
+  if(sliderBasket.scrollLeft > (basketMaxScrollLeft-2)){
+    sliderBasket.scrollLeft -= basketMaxScrollLeft;
+  }else{
+    sliderBasket.scrollLeft += 1;
+  }
+}
 
 function init() {
   createCartsForDishes();

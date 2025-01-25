@@ -23,9 +23,21 @@
             <img class="btn-img-basket" src="./img/shopping-venture-78019_1280.jpg">
         </button>
     </header>
+   
     <main>
         <div id="notification" class="notification"><img src="./img/flat-2442462_1280.png" width="100px"></div>
         <div id="foods" class="foods">
+            <div id="slide-bar-container" class="slide-bar-container">
+                <button onclick="slideLeft()" id="slide-left" class="slide-btn"><</button>
+                <section id="slider">
+                    <img class="slide-bar-img" src="./img/1.png">
+                    <img class="slide-bar-img" src="./img/2.png">
+                    <img class="slide-bar-img" src="./img/3.png">
+                    <img class="slide-bar-img" src="./img/4.png">
+                    <img class="slide-bar-img" src="./img/dessert-1786311_1280.jpg" width="300px">
+                </section>
+                <button onclick="slideRight()" id="slide-right" class="slide-btn">></button>
+            </div>
             <div id="foods-container" class="foods-container">
                 <h2>Hautgerichte</h2>
                 <img src="./img/pizza-3007395_1280.jpg" class="publicity-img">
@@ -71,6 +83,17 @@
                 <button onclick="orderIsOut()" id="order-btn" class="btn btn-primary mt-4">
                     Bestellen
                 </button>
+                <div id="slide-bar-container" class="slide-bar-container">
+                    <button onclick="slideLeft()" id="slide-left" class="slide-btn"><</button>
+                    <section id="slider-basket">
+                        <img class="slide-bar-img-basket" src="./img/1.png">
+                        <img class="slide-bar-img-basket" src="./img/2.png">
+                        <img class="slide-bar-img-basket" src="./img/3.png">
+                        <img class="slide-bar-img-basket" src="./img/4.png">
+                        <img class="slide-bar-img-basket" src="./img/dessert-1786311_1280.jpg" width="300px">
+                    </section>
+                    <button onclick="slideRight()" id="slide-right" class="slide-btn">></button>
+                </div>
             </div>
         </div>
     </main>
