@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lieferdienst</title>
+    <link rel="icon" type="image/x-icon" href="./img/chef-hat-1588125_1280.png">
     <script src="tamplate.js"></script>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -15,69 +16,61 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body onload="init()">
+<body onload="init()" onresize="windowWidthChangedFunction()">
     <header>
-
+        <img src="./img/chef-hat-1588125_1280.png" width="50px" height="50px">
+        <button onclick="openBasket()" id="header-basket-btn" class="btn">
+            <img class="btn-img-basket" src="./img/shopping-venture-78019_1280.jpg">
+        </button>
     </header>
     <main>
-        <div class="foods">
-            <div class="card mb-2">
-                <div class="btn-div">
-                    <button onclick="addElementToBasket(0, 'title_1')" class="btn btn-primary">
-                        +
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h2 id="title_1"></h2>
-                    <p id="Ingredients_1"></p>
-                </div>
+        <div id="notification" class="notification"><img src="./img/flat-2442462_1280.png" width="100px"></div>
+        <div id="foods" class="foods">
+            <div id="foods-container" class="foods-container">
+                <h2>Hautgerichte</h2>
+                <img src="./img/pizza-3007395_1280.jpg" class="publicity-img">
             </div>
-
-            <div class="card mb-2">
-                <div class="btn-div">
-                    <button onclick="addElementToBasket(0, 'title_2')" class="btn btn-primary">
-                        +
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h2 id="title_2"></h2>
-                    <p id="Ingredients_2"></p>
-                </div>
-            </div>
-
-            <div class="card mb-2">
-                <div class="btn-div">
-                    <button onclick="addElementToBasket(0, 'title_3')" class="btn btn-primary">
-                        +
-                    </button>
-                </div>
-                <div class="card-body">
-                    <h2 id="title_3"></h2>
-                    <p id="Ingredients_3"></p>
-                </div>
+            <div id="desserts" class="desserts">
+                <h2>desserts</h2>
+                <img src="./img/dessert-1786311_1280.jpg" class="publicity-img">
             </div>
         </div>
-
-        <div id="shopping-basket" class="shopping-basket">
-            <h2 class="text-align-center">Warenkorb</h2>
-            <div id="shopping-basket-empty" class="shopping-basket-empty">
-                <img id="shopping-basket-img" class="shopping-basket-img" src="./img/shopping-venture-78019_1280.jpg">
-                <b class="text-align-center">Fülle deinen Warenkorb</b>
-                <p class="text-align-center">füge einige leckere Gerichte aus der Speisekarte</p>
-            </div>
-            <div id="basket-elements"></div>
-            <div id="costs" class="costs">
-                <span>
-                    <small class="text-align-left">Zwischensumme</small>
-                    <small class="text-align-left">Lieferkosten</small>
-                    <b class="text-align-left">Gesamt</b>
-                </span>
-
-                <span>
-                    <small class="text-align-right">.</small>
-                    <small class="text-align-right">5€</small>
-                    <b class="text-align-right"></b>
-                </span>
+        <div id="shopping-basket-container" class="shopping-basket-container">
+            <div id="shopping-basket" class="shopping-basket">
+                <div class="basket-close-btn-container">
+                    <button onclick="openBasket()" class="basket-close-btn">x</button>
+                </div>
+                <h2 class="text-align-center">Warenkorb</h2>
+                <div class="delivery-or-pick-up-container">
+                    <button onclick="pickUpDeliverySwitch()" id="delivery-btn" class="delivery-btn">
+                        Lieferung
+                    </button>
+                    <button onclick="deliveryPickUpSwitch()" id="pick-up-btn" class="pick-up-btn">
+                        Abholung
+                    </button>
+                </div>
+                <div id="shopping-basket-empty" class="shopping-basket-empty">
+                    <img id="shopping-basket-img" class="shopping-basket-img"
+                        src="./img/shopping-venture-78019_1280.jpg">
+                    <b class="text-align-center">Fülle deinen Warenkorb</b>
+                    <p class="text-align-center">füge einige leckere Gerichte aus der Speisekarte</p>
+                </div>
+                <div id="basket-elements"></div>
+                <div id="costs" class="costs">
+                    <span>
+                        <small class="text-align-left">Zwischensumme</small>
+                        <small id="delevery-costs" class="text-align-left">Lieferkosten</small>
+                        <b class="text-align-left">Gesamt</b>
+                    </span>
+                    <span>
+                        <small id="costs-without-delevery-charges" class="text-align-right">.</small>
+                        <small id="delevery-costs-2" class="text-align-right">5€</small>
+                        <b id="costs-with-delevery-charges" class="text-align-right"></b>
+                    </span>
+                </div>
+                <button onclick="orderIsOut()" id="order-btn" class="btn btn-primary mt-4">
+                    Bestellen
+                </button>
             </div>
         </div>
     </main>
@@ -85,4 +78,5 @@
 
     </footer>
 </body>
+
 </html>
